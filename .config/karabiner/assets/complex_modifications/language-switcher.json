@@ -1,0 +1,33 @@
+{
+  "title": "Language switch",
+  "rules": [
+    {
+      "description": "Custom: Map <Fn-Space> to <M-Cmd-Space> (language switch)",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "spacebar",
+              "modifiers": [
+                "right_option",
+                "right_command"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
