@@ -1,0 +1,137 @@
+" Warning: Do not use 'runtime' in ~/.vimrc because IdeaVim does not work with it
+" Warning: Do not add comments after <Action>(Command) in ~/.ideavimrc
+" Warning: Do not use <cmd>, <Left>, <Up>, <Down>, <Right> because IdeaVim does not understand it
+
+" source ~/.config/nvim/settings.vim
+" source ~/.config/nvim/maps.vim
+
+" Sync with system clipboard
+set clipboard+=unnamed
+
+" Treat lines with only whitespace as empty lines
+" Commands: '{', '}'
+set vim-paragraph-motion
+
+set ideajoin
+" add{ys}, change{cs}, delete{ds}, visual{S then 'surround character'}
+set surround
+" Commands: ys, cs, ds, S
+" set vim-surround
+set easymotion
+
+" set multiple-cursors
+" Do not show 'VIM -- VISUAL LINE' or other statuses
+set noshowmode
+
+""" Mappings  -------------------------------
+
+" Edit .ideavimrc
+map <leader>vv :e ~/.ideavimrc<CR>
+" Reload .ideavimrc
+map <leader>vr :source ~/.ideavimrc<CR>
+
+" Bookmarks
+nnoremap gm :action ToggleBookmarkWithMnemonic <CR>
+nnoremap gb :action Bookmarks.Goto <CR>
+
+""" Navigation  -------------------------------
+
+" Search everywhere (n-characters)
+map <leader>f <Plug>(easymotion-s)
+
+" Search forwards (n-characters)
+map <leader>e <Plug>(easymotion-f)
+
+map <leader>[ <Action>(MethodUp)
+map <leader>] <Action>(MethodDown)
+map <leader>l <Action>(RecentLocations)
+map <leader>o <Action>(FileStructurePopup)
+map <leader>st <Action>(Switcher)
+
+map <S-Space> <Action>(GotoNextError)
+map <leader>ge <Action>(GotoNextError)
+map <leader>gE <Action>(GotoPreviousError)
+map <leader>gf <Action>(GotoFile)
+map <leader>go <Action>(GotoSymbol)
+map <leader>gc <Action>(GotoClass)
+map <leader>gh <Action>(TypeHierarchy)
+map gu <Action>(FindUsages)
+map gi <Action>(GotoImplementation)
+map gd <Action>(GotoDeclaration)
+map gp <Action>(GotoToSuperMethod)
+map gt <Action>(RiderUnitTestFocusExplorerAction)
+map g, <Action>(JumpToLastChange)
+
+
+""" Actions  -------------------------------
+
+map M <Action>(ShowBookmarks)
+map <leader>ms <Action>(ShowBookmarks)
+map <leader>mm <Action>(ToggleBookmark)
+map <leader>mn <Action>(GotoNextBookmark)
+map <leader>mp <Action>(GotoPreviousBookmark)
+map <leader>m1 <Action>(ToggleBookmark1)
+map <leader>m2 <Action>(ToggleBookmark2)
+map <leader>m3 <Action>(ToggleBookmark3)
+map <leader>m4 <Action>(ToggleBookmark4)
+map <leader>m5 <Action>(ToggleBookmark5)
+map <leader>m6 <Action>(ToggleBookmark6)
+map <leader>m7 <Action>(ToggleBookmark7)
+map <leader>m8 <Action>(ToggleBookmark8)
+map <leader>m9 <Action>(ToggleBookmark9)
+map <leader>m0 <Action>(ToggleBookmark0)
+
+map <leader>c <Action>(CloseEditor)
+" Unsplit and merge all split windows (preserves tabs)
+map <leader>su <Action>(UnsplitAll)
+
+map <leader>z <Action>(ToggleDistractionFreeMode)
+" Show the file in Project View)
+map <leader>ss <Action>(SelectInProjectView)
+map <leader>su <Action>(SurroundWith)
+nnoremap <leader>ns :action NewScratchFile <CR>
+nnoremap <leader>nf :action NewElementSamePlace <CR>
+" Show Git annotation
+map <leader>a <Action>(Annotate)
+" Show current file Git history
+map <leader>hf <Action>(Vcs.ShowTabbedFileHistory)
+" nmap <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+nmap vc <Action>(VcsShowCurrentChangeMarker)
+nmap vn <Action>(VcsShowNextChangeMarker)
+nmap vp <Action>(VcsShowPrevChangeMarker)
+nmap vh <Action>(CallHierarchy)
+" Show current file edit history (includes changes not committed to Git)
+map <leader>hh <Action>(LocalHistory)
+map <leader>ww <Action>(HideAllWindows)
+map <leader>sw <Action>(SurroundWith)
+map <leader>b <Action>(ToggleLineBreakpoint)
+" Little popup for navigating in file structure
+" map <leader>t <Action>(Terminal.OpenInTerminal)
+
+""" Map keys  -------------------------------
+
+vnoremap / :action Find<CR>
+nnoremap / :action Find<CR>
+" Format code
+map <leader>= <Action>(ReformatCode)
+map <C-O> <Action>(Back)
+map <C-I> <Action>(Forward)
+
+" Join lines and add whitespace
+map <leader>J Ji <ESC>
+" Redo vim-undo command 'u'
+map U <C-R>
+map <S-Tab> <Action>(PreviousTab)
+map <Tab> <Action>(NextTab)
+" Overwrite vim bprev, bnext
+map H <Action>(PreviousTab)
+map L <Action>(NextTab)
+
+""" Specific per App  -------------------------------
+
+" if &ide =~? 'WebStorm'
+" elseif &ide =~? 'Rider'
+" endif
+
+" Visual block (<C-V> is used for copy-paste)
+nnoremap Q <C-V>
