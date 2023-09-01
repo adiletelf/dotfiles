@@ -1,0 +1,46 @@
+[user]
+	name = adiletelf
+	email = 74559101+adiletelf@users.noreply.github.com
+[core]
+	editor = nvim
+	excludesFile = ~/.gitignore
+	autocrlf = input
+
+[init]
+	defaultBranch = main
+
+[alias]
+	# Branches
+	br = branch
+	sw = switch
+
+	# Commit
+	ci = commit
+	ca = commit --amend --no-edit
+  cm = commit -m
+
+	# Status
+	last = log -1 HEAD
+	st = status
+	ss = status --short
+	go = log --oneline --graph
+	goa = log --oneline --graph --all
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ld = log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph
+	ls = log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+
+
+  lg = lg1
+  lg1 = lg1-specific --all
+  lg2 = lg2-specific --all
+  lg3 = lg3-specific --all
+
+  lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
+  lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+  lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+
+  # acm = "!cd -- \"${GIT_PREFIX:-.}\" && git add -u && git commit -m $1 #"
+  ac = "!git add -A && git commit -m"
+
+  unstage = reset HEAD --
+
