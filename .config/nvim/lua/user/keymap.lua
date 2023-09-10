@@ -4,8 +4,9 @@ vim.keymap.set('n', '<Space>', '<NOP>')
 vim.keymap.set('n', '<C-H>', '<CMD>bprevious<CR>', {desc = 'Move to prev buffer'})
 vim.keymap.set('n', '<C-L>', '<CMD>bnext<CR>', {desc = 'Move to next buffer'})
 
-
 vim.keymap.set('n', '<Leader>q', '<CMD>quit<CR>', {desc = 'Quit'})
+vim.keymap.set('n', '<Leader>c', '<CMD>bd<CR>', {desc = 'Buffer delete'})
+vim.keymap.set('n', '<Leader>w', '<CMD>write<CR>', {desc = 'Save'})
 
 -- Resize windows
 vim.keymap.set('n', 'sh', '<CMD>vertical resize +2<CR>', {desc = 'Resize window to the left'})

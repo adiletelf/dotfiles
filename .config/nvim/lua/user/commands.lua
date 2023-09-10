@@ -8,3 +8,16 @@ autocmd('FileType', {
     command = 'nnoremap <buffer> q <CMD>quit<CR>'
 })
 
+autocmd('FileType', {
+    desc = 'Set tab to 2 spaces',
+    pattern = {
+        'javascript',
+        'typescript',
+        'lua',
+    },
+    group = augroup,
+    callback = function()
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+    end
+})

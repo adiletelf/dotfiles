@@ -27,13 +27,6 @@ end
 lazy.path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 lazy.opts = {}
 
-lazy.setup({
-	{'folke/tokyonight.nvim'},
-	{'nvim-lualine/lualine.nvim'},
-	{
-		-- Autopairs for quotes, brackets, braces
-		'windwp/nvim-autopairs',
-    	event = "InsertEnter",
-    	opts = {} -- this is equalent to setup({}) function
-	},
-})
+-- Any lua file in ~/.config/nvim/lua/user/plugins/*.lua will be automatically merged in the main plugin spec
+lazy.setup('user.plugins')
+

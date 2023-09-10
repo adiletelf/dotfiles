@@ -12,7 +12,7 @@ vim.opt.tabstop = 4; vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- To ALWAYS use the system clipboard for ALL operations.
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard:append('unnamedplus')
 
 vim.opt.termguicolors = true
 
