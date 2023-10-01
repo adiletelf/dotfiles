@@ -1,19 +1,16 @@
-prepend_to_path () {
-    if [ -d "$1" ]; then
-        PATH="$1:$PATH"
-    fi
-}
-
-export EDITOR="vim"
+export EDITOR="nvim"
 export NVIMRC="$HOME/.config/nvim/init.vim"
 export GOPATH="$HOME/.local/share/go"
 
-prepend_to_path "$HOME/.local/bin" # Include binaries to PATH
-prepend_to_path "$HOME/.cargo/bin" # Add Cargo to PATH
-prepend_to_path "/Library/PostgreSQL/15/bin" # Add Postgresql to PATH
-prepend_to_path "$HOME/.local/share/go/bin" # Add Golang to PATH
+append_to_path "$HOME/.local/bin" # Include binaries to PATH
+append_to_path "$HOME/.cargo/bin" # Add Cargo to PATH
+append_to_path "$HOME/.local/share/go/bin" # Add Golang to PATH
+append_to_path "/Library/PostgreSQL/15/bin" # Add Postgresql to PATH
 
 # Add Homebrew to PATH, MANPATH
-eval $(/opt/homebrew/bin/brew shellenv)
-
-unset -f prepend_to_path
+if [ -f /opt/homebrew/bin/brew ] &&
+    [[ ! "$PATH" == */opt/homebrew/bin* ]] &&
+    [[ ! "$PATH" == */opt/homebrew/sbin* ]] ;
+then
+    eval $(/opt/homebrew/bin/brew shellenv)
+fi

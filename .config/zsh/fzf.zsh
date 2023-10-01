@@ -10,4 +10,5 @@ fi
 
 # Key bindings
 # ------------
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+source_script "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+
