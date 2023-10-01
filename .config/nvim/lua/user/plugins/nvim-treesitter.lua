@@ -9,13 +9,19 @@ return {
         'html',
         'css',
         'json',
+        'yaml',
         'bash',
         'vim',
         'lua',
         'gitignore',
+        'javascript',
+        'typescript',
+        'tsx',
+        'c_sharp',
       },
       -- auto install above language parsers
       auto_install = true,
     })
   end,
 }
+

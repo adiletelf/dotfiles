@@ -52,9 +52,7 @@ fi
 
 
 # Init [fnm - Fast Node Manager](github.com/Schniz/fnm)
-if command -v fnm &> /dev/null &&
-    [ "$PATH" == */Users/adiletelf/Library/Caches/fnm_multishells/* ] ;
-then
+if command -v fnm &> /dev/null ; then
     eval "$(fnm env --use-on-cd)"
 else
     echo "fnm is not installed"

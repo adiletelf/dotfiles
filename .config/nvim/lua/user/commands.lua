@@ -1,5 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
-local augroup = vim.api.nvim_create_augroup('user_cmds', {clear = true})
+local augroup = vim.api.nvim_create_augroup('user_cmds', { clear = true })
 
 autocmd('FileType', {
     desc = "Use 'q' to close the window",
@@ -13,6 +13,8 @@ autocmd('FileType', {
     pattern = {
         'javascript',
         'typescript',
+        'javascriptreact',
+        'typescriptreact',
         'lua',
     },
     group = augroup,
@@ -21,3 +23,4 @@ autocmd('FileType', {
         vim.opt_local.tabstop = 2
     end
 })
+
