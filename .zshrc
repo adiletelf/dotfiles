@@ -70,3 +70,6 @@ unset -f source_script
 unset -f append_to_path
 unset -f prepend_to_path
 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

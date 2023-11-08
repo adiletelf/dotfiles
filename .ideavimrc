@@ -4,7 +4,7 @@
 
 " source ~/.config/nvim/settings.vim
 " source ~/.config/nvim/maps.vim
-
+let mapleader = ' '
 " Sync with system clipboard
 set clipboard+=unnamed
 
